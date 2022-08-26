@@ -142,8 +142,12 @@
     padding: 2rem 0;
   }
 
-  .section-title {
+  .contactus-title {
     color: white;
+  }
+
+  .section-title {
+    color: brown
   }
 
   .contact-us-title {

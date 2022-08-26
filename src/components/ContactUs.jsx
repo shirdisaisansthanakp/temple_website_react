@@ -1,7 +1,7 @@
 export default function ContactUs() {
     return (
         <section id="contactus">
-            <h4 className="section-title">Contact Us</h4>
+            <h4 className="contactus-title">Contact Us</h4>
             <img src="assets/images/colored-hr.png" alt="hr" className="image-hr text-secondary" />
 
             <h5 className="contact-us-title">Shirdi Sai Sansthan</h5>
