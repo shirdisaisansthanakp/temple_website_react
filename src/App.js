@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Gallery from "./components/Gallery";
+import Donations from "./components/Donations";
+import ContactUs from "./components/ContactUs";
+import { getPxFromRem } from './helpers/utils';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const BannerImage = () => (
+  <img
+    src="assets/images/banner.jpg"
+    width={getPxFromRem()}
+    height={getPxFromRem(40)}
+  />
+);
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>  
+      <Header />
+      <Navbar />
+      <BannerImage />
+      <Gallery />
+      <Donations />
+      <ContactUs />
+    </>
+  )
 }
-
-export default App;

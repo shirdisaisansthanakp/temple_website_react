@@ -1,13 +1,152 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* variables */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+:root {
+    --header-bg: #821A19;
+    --header-subtitle: #F9DB8F;
+    --nav-background: #F9DC93;
+  }
+  
+  /* globals */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 15px;
+  }
+
+  .section-title {
+    text-align: center;
+    color: brown;
+  }
+
+  .font-lighter {
+    font-weight: 250;
+  }
+
+  .image-hr {
+    display: block;
+    width: 10rem;
+    margin: .75rem auto 2rem auto !important;
+  }
+  
+  /* header */
+  header {
+    background-color: var(--header-bg);
+  }
+  
+  header h1 {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    padding-top: .3rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .header-image-section {
+    margin-right: 1.2rem;
+  }
+  
+  .logo {
+    border-radius: 50%;
+  }
+  
+  .subtitle {
+    color: var(--header-subtitle);
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+  
+  /* navbar */
+  nav {
+    background-color: var(--nav-background);
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    padding: .3rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+  }
+  
+  nav ul li a:hover {
+    font-weight: 500;
+    color: var(--header-bg);
+  }
+  
+  .active {
+    border-bottom: 3px solid tomato;
+  }
+  
+  .inactive {
+    border-bottom: none;
+  }
+
+  /* donations */
+  .donations-image {
+    border: 3px solid gold;
+    border-radius: 1.3rem;
+  }
+
+  section#donations, section#contactus {
+    margin: 1.25rem 0;
+  }
+
+  section#donations p {
+    margin-bottom: 0;
+  }
+
+  .donations-content {
+    margin-left: 2rem;
+  }
+
+  .donation-content-title-red {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 0.35rem !important;
+    color: red;
+  }
+
+  .donation-content-title-blue {
+    color: blue;
+  }
+
+  .custom-or {
+    margin: .5rem 0 .5rem 4rem !important;
+  }
+
+  .donate-btn {
+    color: white;
+    background-color: rgb(203, 18, 18);
+    font-size: .9rem;
+    padding: .25rem 2rem;
+    border: none;
+    border-radius: .5rem;
+  }
+
+  /* contact us */
+  #contactus {
+    text-align: center;
+    background-color: rgb(72, 33, 33);
+    color: var(--header-subtitle);
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    color: white;
+  }
+
+  .contact-us-title {
+    color: tomato;
+    font-weight: bolder;
+  }
