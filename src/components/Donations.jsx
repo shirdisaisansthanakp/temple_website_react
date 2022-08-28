@@ -30,7 +30,7 @@ export default function Donations() {
 
                     <p className="custom-or">OR</p>
 
-                    <button className="donate-btn">Donate via UPI</button>
+                    <button className="themed-btn">Donate via UPI</button>
                 </div>
             </section>
         </section>

@@ -14,3 +14,16 @@ export const NAV_LINKS = [
     {id: ABOUT_US_PAGE, title: 'about us'},
     {id: CONTACT_US_PAGE, title: 'contact us'}
 ];
+
+export const GITHUB_FILE_UPLOAD_URL = 'https://api.github.com/repos/shirdisaisansthanakp/temple_website_react/contents/public/assets/gallery/';
+
+export const githubConfig = {
+    headers: {
+        Authorization: `Bearer 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`,
+        'Content-Type': 'application/json'
+    },
+};
+
+export const MAX_FILE_SIZE_IN_MB = 5;
+
+export const defaultImageFormats = ".jpg, .jpeg, .png";

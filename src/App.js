@@ -5,6 +5,7 @@ import Donations from "./components/Donations";
 import ContactUs from "./components/ContactUs";
 import { getPxFromRem } from './helpers/utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ImageUpload from "./components/ImageUpload";
 
 const BannerImage = () => (
   <img
@@ -16,7 +17,8 @@ const BannerImage = () => (
 
 export default function App() {
   return (
-    <>  
+    <> 
+      <ImageUpload allowedMaxSizeInMb={5} />
       <Header />
       <Navbar />
       <BannerImage />
