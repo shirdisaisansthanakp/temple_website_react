@@ -2,10 +2,7 @@ import {
     HTML_FONT_SIZE_IN_PX, 
     NAV_LINKS, HOME_PAGE, 
     MAX_FILE_SIZE_IN_MB,
-    GITHUB_FILE_UPLOAD_URL, 
-    githubConfig 
 } from './constants';
-import Http from './http';
 
 export const getPxFromRem = (remUnit = 0) => {
     let pixels;
@@ -26,20 +23,18 @@ export const getActivePage = () => {
     return HOME_PAGE;
 };
 
-export const uploadImage = (image) => {
+export const uploadFile = (file) => {
     return new Promise((resolve, reject) => {
         try {
-            const imageName = image?.filename;
+            const fileName = 'test' ?? file?.name;
 
-            if (imageName) {
-                const url = `${GITHUB_FILE_UPLOAD_URL}/${imageName}.txt`;
+            if (fileName) {
+                const url = `${fileName}.txt`;
                 const reader = new FileReader();
-                reader.readAsDataURL(image);
+                reader.readAsDataURL(file);
 
                 reader.onloadend = () => {
-                    const imageBlob = reader.result?.replace('data:', '').replace(/^.+,/, '');
-                    const response = Http.post(url, { message: imageName, content: imageBlob }, githubConfig);
-                    resolve(response);
+                    
                 };
                 reader.onerror = () => reject('');
             }
@@ -50,18 +45,20 @@ export const uploadImage = (image) => {
     });
 };
 
-export const uploadImages = (images) => {
+export const uploadFiles = (files) => {
     return new Promise((resolve, reject) => {
         try {
-            if (images?.length) {
-                const promises = images.map(image => uploadImage(image));
+            if (files?.length) {
+                const promises = Array.from(files).map(file => uploadFile(file));
                 Promise.allSettled(promises).then(responses => {
-                    console.log('uploadImages_response', responses);
+                    console.log('uploadFiles_response', responses);
+                    resolve(responses);
                 });
             }
         }
         catch (error) {
-            console.error('Something went wrong while uploading the images : ', error.message);
+            console.error('Something went wrong while uploading the files : ', error.message);
+            reject([]);
         }
     });
 };

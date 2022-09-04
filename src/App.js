@@ -4,8 +4,8 @@ import Gallery from "./components/Gallery";
 import Donations from "./components/Donations";
 import ContactUs from "./components/ContactUs";
 import { getPxFromRem } from './helpers/utils';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageUpload from "./components/ImageUpload";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BannerImage = () => (
   <img
